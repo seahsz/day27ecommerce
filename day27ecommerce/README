@@ -1,0 +1,10 @@
+Instructions:
+
+1. Application should save the purchase order into the database (I think should be SQL) after user 
+submits the order
+
+2. Save the events into an event-store (practice event-sourcing)
+
+3. Relay the events to another event-store
+
+3. Event store to apply changes to backup database (another SQL database)
