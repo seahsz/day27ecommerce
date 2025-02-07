@@ -8,3 +8,12 @@ submits the order
 3. Relay the events to another event-store
 
 3. Event store to apply changes to backup database (another SQL database)
+
+Areas for Improvement:
+
+1. Instead of using 2 collections for the backup Event Store,
+Save the last read timestamp to Redis (Because saving to there is fast) --> more efficient
+
+2. Using Redis to keep an INCR counter to check if message is being sent successfully (not lost)
+
+3. Using Redis to store a set of read UUID or timestamp, before writing into backup event_store, check if the UUID already exist in Redis (prevent duplicate events)
